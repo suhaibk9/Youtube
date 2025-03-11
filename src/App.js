@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+// src/App.js
+import React from 'react';
 import './App.css';
-
-function App() {
+import Head from './components/Head';
+import Body from './components/Body';
+import { useState } from 'react';
+const App = () => {
+  const [open, setOpen] = useState(true);
+  const handleOpen = () => {
+    setOpen(!open);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Head handleOpen={handleOpen} />
+      <Body open={open} />
+    </>
   );
-}
+};
 
 export default App;

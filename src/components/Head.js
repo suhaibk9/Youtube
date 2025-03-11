@@ -2,7 +2,7 @@ import React from 'react';
 
 const Head = ({ handleOpen }) => {
   return (
-    <div class="grid grid-flow-col p-4 m-2 shadow-lg">
+    <div className="grid grid-flow-col p-4 m-2 shadow-lg">
       <div className="flex col-span-1">
         <img
           onClick={handleOpen}

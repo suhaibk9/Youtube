@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import Head from './Head';
 import MainContainer from './MainContainer';
-const Body = ({ open }) => {
+import { Outlet } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+const Body = () => {
+  const open = useSelector((state) => state.appSlice.isSideBarOpen);
+  
   return (
     <div className="grid grid-flow-col">
       {open && <Sidebar />}
-      <MainContainer />
+      <Outlet />
     </div>
   );
 };
